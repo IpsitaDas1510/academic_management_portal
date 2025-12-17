@@ -11,11 +11,12 @@ def db_create_mark(data):
     now = datetime.now().isoformat()
 
     cur = conn.execute("""
-        INSERT INTO marks (student_id, year, marks, created_at)
-        VALUES (?, ?, ?, ?)
+        INSERT INTO marks (student_id, year,subject, marks, created_at)
+        VALUES (?, ?, ?, ?, ?)
     """, (
         data["student_id"],
-        data["year"],      # "1st year", "2nd year", "3rd year"
+        data["year"],# "1st year", "2nd year", "3rd year"
+        data["subject"],
         data["marks"],
         now
     ))

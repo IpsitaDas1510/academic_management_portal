@@ -18,7 +18,7 @@ curl -X GET "http://localhost:8000/api/marks/student/1"
 curl -X GET "http://localhost:8000/api/teachers/1"
 
 # C. Create Student
-curl -X POST "http://localhost:8000/api/students" \
+curl -X POST "https://cautious-space-fishstick-69qvgvr5qv7q2xr6q-8000.app.github.dev/api/students" \
   -H "Content-Type: application/json" \
   -d '{
     "name": "Alice Johnson",
@@ -28,37 +28,50 @@ curl -X POST "http://localhost:8000/api/students" \
   }'
 
 # C. Create Teacher
- curl -X POST "http://localhost:8000/api/teachers" \
+ curl -X POST "https://cautious-space-fishstick-69qvgvr5qv7q2xr6q-8000.app.github.dev/api/teachers" \
   -H "Content-Type: application/json" \
   -d '{
-    "name": "John Wick",
-    "email": "john@example.com",
+    "name": "Naruto Uzumaki",
+    "email": "uzumaki@example.com",
     "subject": "Mathematics"
   }'
 
 
 # C. Create Mark 1st year
-curl -X POST "http://localhost:8000/api/marks" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "student_id": 1,
-    "year": "1st year",
-    "marks": 85
-  }'
+curl -X POST http://localhost:8000/api/marks \
+-H "Content-Type: application/json" \
+-d '{
+  "student_id": 1,
+  "year": "1st year",
+  "subject": "Maths",
+  "marks": 90
+}'
+
 
 
 # C. Create Mark 2nd year
-curl -X POST "http://localhost:8000/api/marks" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "student_id": 1,
-    "year": "2nd year",
-    "marks": 90
-  }'
+curl -X POST http://localhost:8000/api/marks \
+-H "Content-Type: application/json" \
+-d '{
+  "student_id": 1,
+  "year": "2nd year",
+  "subject": "Maths",
+  "marks": 90
+}'
+
+# C. Create Mark 3rd year
+curl -X POST http://localhost:8000/api/marks \
+-H "Content-Type: application/json" \
+-d '{
+  "student_id": 1,
+  "year": "3rd year",
+  "subject": "Maths",
+  "marks": 90
+}'
 
 
 # D. Update Student
-curl -X PUT "http://localhost:8000/api/students/1" \
+curl -X PUT "https://cautious-space-fishstick-69qvgvr5qv7q2xr6q-8000.app.github.dev/api/students/1" \
   -H "Content-Type: application/json" \
   -d '{
     "name": "Alice Updated",
@@ -68,7 +81,7 @@ curl -X PUT "http://localhost:8000/api/students/1" \
   }'
 
   # D. Update Teacher
-curl -X PUT "http://localhost:8000/api/teachers/1" \
+curl -X PUT "https://cautious-space-fishstick-69qvgvr5qv7q2xr6q-8000.app.github.dev/api/teachers/1" \
   -H "Content-Type: application/json" \
   -d '{
     "name": "John Updated",
@@ -77,10 +90,11 @@ curl -X PUT "http://localhost:8000/api/teachers/1" \
   }'
 
  # D. Update Marks
-  curl -X PUT "http://localhost:8000/api/marks/1" \
+  curl -X PUT "https://cautious-space-fishstick-69qvgvr5qv7q2xr6q-8000.app.github.dev/api/marks/1" \
   -H "Content-Type: application/json" \
   -d '{
     "year": "1st year",
+    "subject": "Maths",
     "marks": 88
   }'
 

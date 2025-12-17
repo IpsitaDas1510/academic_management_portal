@@ -1,11 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <title>Marks</title>
 </head>
 <body>
-    <h1>MARKS PAGE</h1>
+  <h2>View Student Marks</h2>
+
+  <input id="sid" placeholder="Student ID">
+  <button onclick="loadMarks()">Get Marks</button>
+
+  <ul id="result"></ul>
+
+  <script>
+    function loadMarks() {
+      const id = document.getElementById("sid").value;
+      fetch(`/api/marks/student/${id}`)
+        .then(r => r.json())
+        .then(data => {
+          const ul = document.getElementById("result");
+          ul.innerHTML = "";
+          data.forEach(m =>
+            ul.innerHTML += `<li>${m.year} : ${m.marks}</li>`
+          );
+        });
+    }
+  </script>
 </body>
 </html>

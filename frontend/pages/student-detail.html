@@ -1,11 +1,112 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Student Details</title>
+</head>
+
+<body>
+
+<a href="/students">← Back to Students</a>
+
+<h1>Student Details</h1>
+
+<div id="studentInfo">Loading student...</div>
+
+<hr>
+
+<h2>Marks</h2>
+
+<ul id="marksList"></ul>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const studentId = params.get("id");
+
+if (!studentId) {
+    document.getElementById("studentInfo").innerText = "Student ID not provided";
+} else {
+    loadStudent();
+    loadMarks();
+}
+
+function loadStudent() {
+    fetch(`/api/students/${studentId}`)
+        .then(res => res.json())
+        .then(student => {
+            document.getElementById("studentInfo").innerHTML = `
+                <p><strong>Name:</strong> ${student.name}</p>
+                <p><strong>Email:</strong> ${student.email}</p>
+                <p><strong>Course:</strong> ${student.course}</p>
+                <p><strong>Year:</strong> ${student.year}</p>
+            `;
+        })
+        .catch(() => {
+            document.getElementById("studentInfo").innerText = "Failed to load student";
+        });
+}
+
+function loadMarks() {
+    fetch(`/api/marks/student/${studentId}`)
+        .then(res => res.json())
+        .then(marks => {
+            const list = document.getElementById("marksList");
+            list.innerHTML = "";
+
+            if (marks.length === 0) {
+                list.innerHTML = "<li>No marks available</li>";
+                return;
+            }
+
+            marks.forEach(mark => {
+                const li = document.createElement("li");
+                li.innerHTML = `
+                    Subject: ${mark.subject} |
+                    Marks: ${mark.marks}
+                `;
+                list.appendChild(li);
+            });
+        })
+        .catch(() => {
+            document.getElementById("marksList").innerHTML =
+                "<li>Failed to load marks</li>";
+        });
+}
+</script>
+
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Details</title>
 </head>
 <body>
-    <h1>STUDENTS DETAILS PAGE</h1>
+  <h2>Student Details</h2>
+  <div id="student"></div>
+  <h3>Marks</h3>
+  <ul id="marks"></ul>
+
+  <script>
+    const id = new URLSearchParams(window.location.search).get("id");
+
+    fetch(`/api/students/${id}`)
+      .then(r => r.json())
+      .then(s => {
+        document.getElementById("student").innerHTML =
+          `<p>Name: ${s.name}</p><p>Course: ${s.course}</p><p>Year: ${s.year}</p>`;
+      });
+
+    fetch(`/api/marks/student/${id}`)
+      .then(r => r.json())
+      .then(marks => {
+        const ul = document.getElementById("marks");
+        marks.forEach(m =>
+          ul.innerHTML += `<li>${m.year} : ${m.marks}</li>`
+        );
+      });
+  </script>
 </body>
 </html>
