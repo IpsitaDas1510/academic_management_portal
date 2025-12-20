@@ -3,8 +3,8 @@ import { $ } from "../utils/dom.js";
 // Reset marks form (Add mode)
 export function resetMarkForm() {
   $("markForm").reset();
-  $("submitMarkBtn").textContent = "Add Mark";
-  $("cancelMarkBtn").style.display = "none";
+  $("submitBtn").textContent = "Add Mark";
+  $("cancelBtn").style.display = "none";
 }
 
 // Fill form for Edit mode
@@ -14,6 +14,6 @@ export function fillMarkForm(mark) {
   $("subject").value = mark.subject;
   $("marks").value = mark.marks;
 
-  $("submitMarkBtn").textContent = "Update Mark";
-  $("cancelMarkBtn").style.display = "inline-block";
+  $("submitBtn").textContent = "Update Mark";
+  $("cancelBtn").style.display = "inline-block";
 }

@@ -1,33 +1,29 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>TEACHERS PAGE</h1>
-</body>
-</html> -->
+<div class="max-w-3xl mx-auto p-6">
 
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Teachers</title>
-</head>
-<body>
-  <h2>Teachers</h2>
-  <ul id="list"></ul>
+  <div class="flex items-center justify-between mb-6">
+    <h1 class="text-3xl font-bold">Student Management System</h1>
+    <a href="/home" data-link class="text-sm text-blue-600 underline">Back to Home</a>
+  </div>
 
-  <script>
-    fetch("/api/teachers")
-      .then(r => r.json())
-      .then(data => {
-        const ul = document.getElementById("list");
-        data.forEach(t =>
-          ul.innerHTML += `<li>${t.name} - ${t.subject}</li>`
-        );
-      });
-  </script>
-</body>
-</html>
+  <!-- Add / Edit Teacher Form -->
+  <div class="bg-white p-5 rounded shadow mb-8">
+    <h2 class="font-semibold mb-3 text-lg">Add New Teacher</h2>
+    <form id="teacherForm" class="space-y-3">
+      <input type="text" id="name" placeholder="Name" required class="w-full border rounded px-3 py-2">
+      <input type="email" id="email" placeholder="Email" required class="w-full border rounded px-3 py-2">
+      <input type="text" id="subject" placeholder="Subject" required class="w-full border rounded px-3 py-2">
+
+      <div class="flex space-x-2">
+        <button type="submit" id="submitBtn"
+          class="flex-1 bg-blue-500 hover:bg-blue-600 text-white py-2 rounded">
+          Add Teacher
+        </button>
+
+        <button type="button" id="cancelBtn"
+          class="flex-1 bg-gray-400 hover:bg-gray-500 text-white py-2 rounded hidden">
+          Cancel
+        </button>
+      </div>
+    </form>
+  </div>
+
