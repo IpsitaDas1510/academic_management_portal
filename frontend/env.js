@@ -1,1 +1,4 @@
-window.API_BASE_URL = "https://cautious-space-fishstick-69qvgvr5qv7q2xr6q-8000.app.github.dev/api";
+// window.API_BASE_URL = "/api";
+// frontend/env.js
+
+window.API_BASE_URL = "/api";

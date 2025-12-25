@@ -1,6 +1,6 @@
 <div class="max-w-3xl mx-auto p-6">
 
-  <!-- Page Heading -->
+<!-- Page Heading -->
   <div class="flex items-center justify-between mb-6">
     <h1 class="text-3xl font-bold">Marks Management</h1>
     <a href="/home" data-link class="text-sm text-blue-600 underline">
@@ -20,19 +20,27 @@
         required
         class="w-full border rounded px-3 py-2"
       />
+      <!-- <input
+        type="text"
+        id="year"
+        placeholder="Year"
+        required
+        class="w-full border rounded px-3 py-2"
+      /> -->
+
+      <label for="year">Year</label>
+        <select id="year" required>
+          <option value="">Select Year</option>
+          <option value="1">1st year</option>
+          <option value="2">2nd year</option>
+          <option value="3">3rd year</option>
+        </select>
+
 
       <input
         type="text"
         id="subject"
         placeholder="Subject"
-        required
-        class="w-full border rounded px-3 py-2"
-      />
-
-      <input
-        type="text"
-        id="year"
-        placeholder="Year"
         required
         class="w-full border rounded px-3 py-2"
       />
@@ -45,6 +53,7 @@
         class="w-full border rounded px-3 py-2"
       />
 
+      
       <div class="flex gap-2">
         <button
           type="submit"
@@ -81,8 +90,8 @@
           <tr>
             <th class="px-3 py-2 border">ID</th>
             <th class="px-3 py-2 border">Student ID</th>
-            <th class="px-3 py-2 border">Subject</th>
             <th class="px-3 py-2 border">Year</th>
+            <th class="px-3 py-2 border">Subject</th>
             <th class="px-3 py-2 border">Marks</th>
             <th class="px-3 py-2 border">Actions</th>
           </tr>
@@ -105,4 +114,6 @@
     id="alertContainer"
     class="fixed top-4 right-4 space-y-2 z-50"
   ></div>
-</div>
+</div> 
+
+

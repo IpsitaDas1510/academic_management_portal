@@ -42,7 +42,7 @@ curl -X POST http://localhost:8000/api/marks \
 -H "Content-Type: application/json" \
 -d '{
   "student_id": 1,
-  "year": "1st year",
+  "year": "2nd year",
   "subject": "Maths",
   "marks": 90
 }'
