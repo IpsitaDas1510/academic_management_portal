@@ -37,37 +37,58 @@ curl -X POST "https://cautious-space-fishstick-69qvgvr5qv7q2xr6q-8000.app.github
   }'
 
 
-# C. Create Mark 1st year
+# # C. Create Mark 1st year
+# curl -X POST http://localhost:8000/api/marks \
+# -H "Content-Type: application/json" \
+# -d '{
+#   "student_id": 1,
+#   "year": "2nd year",
+#   "subject": "Maths",
+#   "marks": 90
+# }'
+
+
+
+# # C. Create Mark 2nd year
+# curl -X POST http://localhost:8000/api/marks \
+# -H "Content-Type: application/json" \
+# -d '{
+#   "student_id": 1,
+#   "year": "2nd year",
+#   "subject": "Maths",
+#   "marks": 90
+# }'
+
+# # C. Create Mark 3rd year
+# curl -X POST http://localhost:8000/api/marks \
+# -H "Content-Type: application/json" \
+# -d '{
+#   "student_id": 1,
+#   "year": "3rd year",
+#   "subject": "Maths",
+#   "marks": 90
+# }'
+
+
+
+# 1st Year
 curl -X POST http://localhost:8000/api/marks \
 -H "Content-Type: application/json" \
--d '{
-  "student_id": 1,
-  "year": "2nd year",
-  "subject": "Maths",
-  "marks": 90
-}'
+-d '{"student_id":1,"year":1,"core1":90,"core2":80,"core3":70}'
 
-
-
-# C. Create Mark 2nd year
+# 2nd Year
 curl -X POST http://localhost:8000/api/marks \
 -H "Content-Type: application/json" \
--d '{
-  "student_id": 1,
-  "year": "2nd year",
-  "subject": "Maths",
-  "marks": 90
-}'
+-d '{"student_id":1,"year":2,"core1":85,"core2":75,"core3":65}'
 
-# C. Create Mark 3rd year
+# 3rd Year
 curl -X POST http://localhost:8000/api/marks \
 -H "Content-Type: application/json" \
--d '{
-  "student_id": 1,
-  "year": "3rd year",
-  "subject": "Maths",
-  "marks": 90
-}'
+-d '{"student_id":1,"year":3,"core1":80,"core2":70,"core3":60}'
+
+
+
+
 
 
 # D. Update Student
