@@ -1,4 +1,4 @@
-<div class="max-w-4xl mx-auto p-6">
+<!-- <!-- <div class="max-w-4xl mx-auto p-6">
 
   <h1 class="text-4xl font-bold mb-4 text-gray-800">
     Welcome
@@ -39,5 +39,104 @@
     </a>
 
   </div>
-</div>
+</div> -->
 
+
+
+<!-- FULL BLEED HERO (STATIC BACKGROUND) -->
+<section
+  class="relative min-h-[calc(100vh-64px)] bg-cover bg-center bg-fixed text-white"
+  style="
+    background-image: url('frontend/pages/photo.jpg');
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+  "
+>
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black/60"></div>
+
+  <!-- Hero Content -->
+  <div class="relative z-10 min-h-[calc(100vh-64px)] flex items-center justify-center px-6">
+    <div class="max-w-4xl text-center">
+      <h1 class="text-4xl md:text-6xl font-bold">
+        Next Big Thing <br />
+        <span class="text-blue-400">In One Page</span>
+      </h1>
+
+      <p class="mt-4 text-gray-300">
+        A powerful Academic Management System to manage students,
+        teachers and marks — all in one place.
+      </p>
+    </div>
+  </div>
+
+  <!-- SCROLL CONTENT -->
+  <div class="relative z-20 py-32">
+    <div class="max-w-6xl mx-auto px-6 space-y-24">
+
+      <!-- STUDENTS -->
+      <div class="flex flex-col md:flex-row items-center gap-12">
+        <a
+          href="/students"
+          class="w-full md:w-1/2 bg-blue-500 text-white p-10 rounded-xl shadow-2xl hover:scale-105 transition-transform block"
+        >
+          <i class="fa-solid fa-user-graduate text-4xl mb-4"></i>
+          <h3 class="text-2xl font-semibold mb-2">Students</h3>
+          <p class="opacity-90">Manage student records</p>
+        </a>
+
+        <div class="w-full md:w-1/2 text-gray-200">
+          <h4 class="text-xl font-semibold mb-3">Student Management</h4>
+          <p class="leading-relaxed">
+            Easily add, update, view, and delete student records.
+            Keep all academic information organized and accessible
+            from a single dashboard.
+          </p>
+        </div>
+      </div>
+
+      <!-- TEACHERS -->
+      <div class="flex flex-col md:flex-row items-center gap-12">
+        <a
+          href="/teachers"
+          class="w-full md:w-1/2 bg-purple-700 text-white p-10 rounded-xl shadow-2xl hover:scale-105 transition-transform block"
+        >
+          <i class="fa-solid fa-chalkboard-teacher text-4xl mb-4"></i>
+          <h3 class="text-2xl font-semibold mb-2">Teachers</h3>
+          <p class="opacity-90">Manage teachers & subjects</p>
+        </a>
+
+        <div class="w-full md:w-1/2 text-gray-200">
+          <h4 class="text-xl font-semibold mb-3">Teacher Management</h4>
+          <p class="leading-relaxed">
+            Maintain teacher profiles, assign subjects, and manage
+            responsibilities efficiently.
+          </p>
+        </div>
+      </div>
+
+      <!-- MARKS -->
+      <div class="flex flex-col md:flex-row items-center gap-12">
+        <a
+          href="/marks"
+          class="w-full md:w-1/2 bg-cyan-500 text-white p-10 rounded-xl shadow-2xl hover:scale-105 transition-transform block"
+        >
+          <i class="fa-solid fa-chart-line text-4xl mb-4"></i>
+          <h3 class="text-2xl font-semibold mb-2">Marks</h3>
+          <p class="opacity-90">View & assign marks</p>
+        </a>
+
+        <div class="w-full md:w-1/2 text-gray-200">
+          <h4 class="text-xl font-semibold mb-3">Marks & Performance</h4>
+          <p class="leading-relaxed">
+            Assign marks, track performance, and analyze academic progress.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
